@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Novatech Coming Soon Page</title>
+    <!-- Important Third party widget scripts -->
+    <script async src="https://www.livecoinwatch.com/static/lcw-widget.js"></script>
+
+    <!-- <meta name="no-ads" content="no-ads"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#131315">
+    <meta name="twitter:card" content="Novatech Office - Coming Soon">
+    <meta name="twitter:site" content="@oniquedaily">
+    <meta name="twitter:creator" content="@oniquedaily">
+    <meta property="og:site_name" content="Novatech Office - Coming Soon">
+    <meta property="og:url" content="https://www.novatechoffice.com/">
+    <meta name="og:title" property="og:title" content="Novatech Office - Coming Soon">
+    <meta property="og:description" content="novatechoffice is an informational inclusive website platform that is able to provide abundant resources such as calculators, generated portfolios, helpful content related to investment, crypto, stock, forex, trading, finance and more.">
+    <meta itemprop="url" content="https://www.novatechoffice.com/">
+    <meta itemprop="name" content="Novatech Office - Coming Soon">
+    <meta itemprop="description" content="novatechoffice is an informational inclusive website platform that is able to provide abundant resources such as calculators, generated portfolios, helpful content related to investment, crypto, stock, forex, trading, finance and more.">
+    <meta name="description" content="novatechoffice is an informational inclusive website platform that is able to provide abundant resources such as calculators, generated portfolios, helpful content related to investment, crypto, stock, forex, trading, finance and more.">
+
+    <!-- - favicon -->
+    <link rel="shortcut icon" href="/nova-tech-asset-pack/favicon.svg" type="image/svg+xml">
+
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" 
+        onload="this.onload=null;this.rel='stylesheet'"/>
+
+    <!-- - google font link -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+
+    <!-- - custom css link -->
+  <link rel="stylesheet" href="/nova-tech-asset-pack/assets/css/coming-soon.css">
+</head>
+<body>
+    <!-- - #HEADER -->
+    <header class="header" data-header>
+      <!-- Widget 1 -->
+      <div class="livecoinwatch-widget-5" lcw-base="USD" lcw-color-tx="#7bdcb5" lcw-marquee-1="coins" lcw-marquee-2="movers" lcw-marquee-items="20" ></div>
+      
+      <div class="container">
+
+      <a href="/index" class="logo">
+          <img src="/nova-tech-asset-pack/assets/images/logo.svg" width="32" height="32" alt="Novatech Office logo">
+      Novatech Office
+      </a>
+
+      <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+
+          <li class="navbar-item">
+              <a href="/index" class="navbar-link active" data-nav-link>Homepage</a>
+          </li>
+
+          <li class="navbar-item">
+              <a href="https://novatechfx.com/Login/" target="_blank" class="navbar-link" data-nav-link>Back Office</a>
+          </li>
+
+          <li class="navbar-item">
+              <a href="/coming-soon-page" class="navbar-link" data-nav-link>Crypto Services</a>
+          </li>
+
+            <li class="navbar-item">
+                <a href="/coming-soon-page" class="navbar-link" data-nav-link>Generate Portfolio</a>
+            </li>
+
+          </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+      </button>
+
+      <a href="#" class="btn btn-outline">Calculator</a>
+
+      </div>
+  </header>
+  <div class="wrapper">
+      <h1>Coming Soon<span class="dot">.</span></h1>
+      <p>NOVATECH OFFICE IS CURRENTLY WORKING ON THIS PAGE.</p>
+      <p>check back in a few days.</p>
+      <div class="icons">
+        <a href="https://twitter.com/oniquedaily?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/onique-campbell-1091b576/"><i class="fa-brands fa-linkedin"></i></i></a>
+        <adiv id="share-btn"><i class="fa fa-paper-plane"></i></adiv>
+      </div>
+  </div>
+
+  <script>
+    // Share Button script
+    const shareBtn = document.getElementById("share-btn");
+    function shareList() {
+        if (navigator.canShare) {
+            navigator.share({
+                title: "NOVATECH OFFICE",
+                text: "NOVATECH OFFICE IS CURRENTLY WORKING ON THIS PAGE - check back in a few days.",
+                url: window.location.href,
+            });
+        } else {
+            // Desktop Functionality
+        }
+    };
+
+    shareBtn.addEventListener("click", () => {
+        shareList();
+    });
+  </script>
+</body>
+</html>

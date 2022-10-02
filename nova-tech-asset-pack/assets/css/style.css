@@ -10,6 +10,7 @@
   --blue-crayola: hsl(222, 100%, 61%);
   --roman-silver: hsl(223, 10%, 52%);
   --presian-red: hsl(0, 64%, 52%);
+  --new-green-color: hsl(132, 56%, 30%);
   --gunmetal_50: hsla(230, 16%, 22%, 0.5);
   --gainsboro: hsl(0, 0%, 85%);
   --cultured: hsl(0, 0%, 93%);
@@ -92,6 +93,9 @@ body {
   color: var(--cadet-blue-crayola);
   font-size: 1.6rem;
   line-height: 1.4;
+}
+.hide {
+  display: none;
 }
 .center-align-h2 {
   display: flex;
@@ -657,6 +661,38 @@ address.footer-contact-link {
 }
 .social-link:is(:hover, :focus) {
   color: var(--blue-crayola);
+}
+.sitemap-pages {
+  padding: 2rem;
+}
+.sitemap-pages h3 {
+  background-color: #15151543;
+}
+.sitemap-links {
+  color: white;
+  display: contents;
+}
+.sitemap-links:hover {
+  color: var(--blue-crayola);
+}
+.sitemap-links:not(:last-of-type)::after {
+  content: "/";
+  margin: 0 .5rem;
+  color: var(--new-green-color); 
+}
+.sitemap-content-snippet {
+  background-color: #00214d;
+  margin: 2rem 0;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.exit-page {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  font-size: 3rem;
+  color: var(--new-green-color); 
 }
 @media (min-width: 575px) {
   :root {

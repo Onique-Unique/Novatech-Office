@@ -96,6 +96,24 @@ shareBtn.addEventListener("click", () => {
     shareList();
 });
 
+//  Open Sitemap Links
+const sitemap = document.querySelectorAll(".sitemap-open");
+const novatechLinks = document.querySelector("#novatech-blogs");
+const novatechExit = document.querySelector(".sitemap-pages");
+const bodyContent = document.querySelector(".body-content");
+
+for(let i = 0; i < sitemap.length; i++){
+  sitemap[i].addEventListener("click", () => {
+    bodyContent.classList.add("hide");
+    novatechLinks.classList.remove("hide");
+  });
+}
+
+novatechExit.addEventListener("click", () => {
+    bodyContent.classList.remove("hide");
+    novatechLinks.classList.add("hide");
+})
+
 // Forex Widget Inject
 window.addEventListener("load", () => {
   const forexWidget = document.createElement("script");

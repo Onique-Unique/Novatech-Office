@@ -179,7 +179,7 @@ createParas = () => {
                     break;
             case 6: htmlCode_first = htmlCode_first.replace(/{ .sixth-h2 }/g,val[0]);
                     break;
-            case 1: htmlCode_first = htmlCode_first.replace(/{ .seventh-h2 }/g,val[0]);
+            case 7: htmlCode_first = htmlCode_first.replace(/{ .seventh-h2 }/g,val[0]);
                     break;
             case 8: htmlCode_first = htmlCode_first.replace(/{ .eight-h2 }/g,val[0]);
                     break;

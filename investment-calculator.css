@@ -1260,8 +1260,6 @@ table tr:nth-child(even) {
 /* Calcuator CSS */
 .calculator-div {
     text-align: center;
-    margin: 170px 0;
-    transform: scale(1.2);
 }
 
 .head-text {
@@ -1329,6 +1327,11 @@ table tr:nth-child(even) {
 }
 
 @media screen and (max-width: 540px) {
+    .calculator-div {
+        transform: scale(1.2);
+        margin: 170px 0;
+    }
+
     .pie-chart {
         flex-direction: column;
     }

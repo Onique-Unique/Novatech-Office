@@ -1260,10 +1260,20 @@ table tr:nth-child(even) {
 /* Calcuator CSS */
 .calculator-div {
     text-align: center;
+    margin: 170px 0;
+    transform: scale(1.2);
 }
 
 .head-text {
     text-shadow: 2px 2px 3px rgba(24, 24, 24, 0.47);
+}
+
+#amt_invested, #amt_returned {
+    font-size: 14px;
+}
+
+.input-group-text {
+    font-size: 16px;
 }
 
 .p-4 {
@@ -1273,7 +1283,6 @@ table tr:nth-child(even) {
 .pie-chart {
     display: flex;
     flex-direction: row;
-    margin: 10px;
 }
 
 .pie-chart-result {
@@ -1287,7 +1296,11 @@ table tr:nth-child(even) {
     padding: 2rem;
     background-color: rgb(179, 179, 255);
     min-height: 340px;
-    font-size: 13.5px;
+    font-size: 12.5px;
+}
+
+.form-control {
+    font-size: 12px;
 }
 
 /* Form Group */

@@ -197,7 +197,7 @@ let htmlCode_first = `<!DOCTYPE html>
                                     <meta itemprop="position" content="1" />
                                 </li>
                                 <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                    <a href="/coming-soon-page" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Request Your Novatech Portfolio</span></a>
+                                    <a href="/coming-soon-page" class="breadcrumbs__link" itemprop="item"><span itemprop="name">Request Your Portfolio Statement</span></a>
                                     <meta itemprop="position" content="2" />
                                 </li>
                                 <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
@@ -271,7 +271,7 @@ let htmlCode_first = `<!DOCTYPE html>
                             <br><br>
                             <div id="other-pages-list">
                                 <h4>Pages You May Want To Go To &darr;</h4>
-                                <li><a href="/coming-soon-page">Request Your Novatech Portfolio <i class="fa-solid fa-download"></i></a></li>
+                                <li><a href="/coming-soon-page">Request Your Portfolio Statement <i class="fa-solid fa-download"></i></a></li>
                             </div>
                         </div>
                     </ul>

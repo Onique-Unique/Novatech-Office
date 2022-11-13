@@ -200,7 +200,7 @@ createParas = () => {
                 <p class="text"> ${val[5]}</p> 
                 <p class="text"> ${val[6]}</p> 
                 <p class="text"> ${val[7]}</p> 
-                <p class="text text-alt"><a href="https://signup.novatechfx.com/Login/" class="btn-primary text-alt-btn">click here <i class="fa-solid fa-circle-chevron-right"></i></a> to login to your account or if you are new, create a<br><a href="https://signup.novatechfx.com/enroll" class="btn-primary text-alt-btn">new account <i class="fa-solid fa-circle-chevron-right"></i></a> here.</p>
+                <p class="text text-alt"><a href="/coming-soon-page" rel="nofollow" target="_blank" class="btn-primary text-alt-btn">click here <i class="fa-solid fa-circle-chevron-right"></i></a> to access Portfolio Statement Generator or keep scrolling to learn more.</p>
             </div>
             <br>
             <p class="text">${val[8]}</p> 
@@ -214,7 +214,7 @@ createParas = () => {
                     <span class="linkspanner"></span>
                     </a>
                 <p class="promo-title"><a href="/coming-soon-page" target="_blank">Unlock Your Earning Potential. <br> <span class="lighter">Track your Novatech Investment, Growth and Digital Assets - Get Your Portfolio Today. <i class="fa-solid fa-cloud-arrow-down"></i></span></a></p>
-                <p><a class="cta-button" href="/coming-soon-page" target="_blank">Generate Novatech Portfolio <i class="fa-solid fa-download"></i></a></p>
+                <p><a class="cta-button" href="/coming-soon-page" target="_blank">Generate Statement Portfolio <i class="fa-solid fa-download"></i></a></p>
                 <div class="right-triangle"> </div>
                 </div>
             </blockquote>

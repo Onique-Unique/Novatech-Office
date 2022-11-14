@@ -15,15 +15,15 @@ let htmlCode_first = `<!DOCTYPE html>
                         "@type": "SearchAction",
                         "target": {
                             "@type": "EntryPoint",
-                            "urlTemplate": "https://novatechoffice.com/blogs?s={search_term_string}"
+                            "urlTemplate": "https://novatechoffice.com/product?s={search_term_string}"
                         },
                         "query-input": "required name=search_term_string"
                     }],
                     "inLanguage": "en-US"
                 }],
                 "@type": "BlogPosting",
-                "mainEntityOfPage": "https://novatechoffice.com/blogs/{ .current-page-link }",
-                "url": "https://novatechoffice.com/blogs/{ .current-page-link }",
+                "mainEntityOfPage": "https://novatechoffice.com/product/{ .current-page-link }",
+                "url": "https://novatechoffice.com/product/{ .current-page-link }",
                 "headline": "Novatech Office is the easiest and fastest way to keep your investments on track to make your money grow.",
                 "description":
                 "{ .description }",
@@ -36,7 +36,7 @@ let htmlCode_first = `<!DOCTYPE html>
                 "author": [{
                     "@type": "Person",
                     "name": "Onique Campbell",
-                    "url": "https://novatechoffice.com/blogs/{ .current-page-link }" 
+                    "url": "https://novatechoffice.com/product/{ .current-page-link }" 
                 }], 
                 "publisher": {
                     "@type": "Organization",
@@ -103,14 +103,14 @@ let htmlCode_first = `<!DOCTYPE html>
     <meta name="twitter:site" content="@oniquedaily">
     <meta name="twitter:creator" content="oniquedaily">
     <meta property="og:site_name" content="{ .title }">
-    <meta property="og:url" content="https://novatechoffice.com/blogs/{ .current-page-link }">
+    <meta property="og:url" content="https://novatechoffice.com/product/{ .current-page-link }">
     <meta name="og:title" property="og:title" content="{ .title }">
     <meta property="og:description" content="{ .description }">
-    <meta itemprop="url" content="https://novatechoffice.com/blogs/{ .current-page-link }">
+    <meta itemprop="url" content="https://novatechoffice.com/product/{ .current-page-link }">
     <meta itemprop="name" content="{ .title }">
     <meta itemprop="description" content="{ .description }">
     <meta name="description" content="{ .description }">
-    <link rel="canonical" href="https://novatechoffice.com/blogs/{ .current-page-link }">
+    <link rel="canonical" href="https://novatechoffice.com/product/{ .current-page-link }">
 
     <!-- - favicon -->
     <link rel="shortcut" href="/nova-tech-asset-pack/favicon/favicon.svg" type="image/svg+xml">
@@ -201,7 +201,7 @@ let htmlCode_first = `<!DOCTYPE html>
                                     <meta itemprop="position" content="2" />
                                 </li>
                                 <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                    <a href="/blogs/{ .current-page-link }" class="breadcrumbs__link breadcrumbs__link--active" aria-current="page" itemprop="item"><span itemprop="name">{ .secondary-title }</span></a>
+                                    <a href="/product/{ .current-page-link }" class="breadcrumbs__link breadcrumbs__link--active" aria-current="page" itemprop="item"><span itemprop="name">{ .secondary-title }</span></a>
                                     <meta itemprop="position" content="3" />
                                 </li>
                             </ul>

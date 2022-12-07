@@ -278,5 +278,5 @@ downloadBtn.addEventListener('click', (e) => {
 //Delete storage 
 deleteStorage.addEventListener('click', () => {
     localStorage.clear();
-    window.location = '/';
+    window.location = '/statement-generate/index';
 });

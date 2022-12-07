@@ -6,6 +6,15 @@
     display: block;
 }
 
+.goal-track {
+    margin: 0 auto;
+}
+
+.goalBar-info {
+    display: flex;
+    justify-content: center;
+}
+
 @media print {
 body * { visibility: hidden; }
 .div1 * { visibility: visible; }

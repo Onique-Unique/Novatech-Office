@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statement</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="statement.css" />
+    <style>
+      .table-2 {
+        width: 100% !important;
+        overflow: scroll;
+        margin-left: auto; 
+        margin-right: auto;
+        display: block;
+        }
+    </style>
+</head>
+<body style="color: #4d4d4d; width: 100%;margin: 0px !important;" >
+  <div id="root">
+    <div class="div1 container mx-auto p-3" id="statement" style="max-width: 900px; height: auto; border: 1px solid black;" >
+        <!-- Page break -->
+        <!--<div class="html2pdf__page-break"></div>-->
+
+        <h3 class="text-center heading fw-bolder" style="color: #4d4d4d;"><!-- YOUR --> <span class="heading-spl text-danger">INVESTOR</span> STATEMENT</h3>
+
+        <!-- User info -->
+        <div class="mt-4 container-fluid d-flex justify-content-between">
+            <div>
+                <h5 id="name"></h5>
+                <h5 id="address"></h5>
+                <h5 id="city"></h5>
+                <h5 id="state"></h5>
+            </div>
+    
+            <div>
+                <h6 id="portNo">PORTFOLIO NO: </h6>
+                <h6 id="portPeriod">PORTFOLIO PERIOD: </h6> <!-- TO DO -->
+                <h6 id="portReturn">PORTFOLIO RETURN: </h6>
+            </div>
+        </div>   
+        
+        <hr class="line" class="mx-auto" style="width: 98%; height: 25px; background-color: grey;margin: 10px auto; border-radius: 2px;" /> 
+
+        <div class="container-fluid">
+            <table class="table table-borderless table-sm">
+                <tbody>
+                  <tr>
+                    <td scope="row">Total Investments: </td>
+                    <td class="totalInv"></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Interest Dividends/Coupon payments: </td>
+                    <td id="interest">$0</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Gain/loss: </td>
+                    <td class="profit"></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Total Encashments: </td>
+                    <td id="encashment">$0</td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Total Transaction Fees:  </td>
+                    <td id="transactFee">$0</td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Management Fee:   </td>
+                    <td id="manageFee">$0</td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td scope="row">Total Withholding Tax:   </td>
+                    <td>$0</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style="background-color: #d9d9d9" class="mb-2 p-1"><span class="me-3 fw-bold">Closing value at:</span> <span class="closingValue"></span></div>
+
+              <div style="background-color: #d9d9d9" class="mb-1 p-1"><span class="me-3 fw-bold">Balance at:</span> <span class="closingBalance"></span></div>
+        </div>
+
+        <!-- Page break -->
+        <!--<div class="html2pdf__page-break"></div>-->
+        
+
+        <div class="container-fluid d-flex justify-content-between p-2 div2">
+            <div style="width: 50%; height: auto;" class="text-center">
+                <p class="mb-0">Portfolio Allocation</p>
+                <h2 class="mt-0">Profit %</h2>
+                <div style="width: 70%; height: auto; position: relative;" class="mb-5 mx-auto">
+                  <!-- <div id="doughnutPercent" style="width: 100%; height: 40px; position: absolute; top: 60%; left: 0; margin-top: -20px; line-height:19px; text-align: center; z-index: 999999999999999">
+                    99%
+                  </div> -->
+                    <canvas id="doughNut1" style="width: 100%; height: 100%;"></canvas>
+                </div>
+            </div>
+            <div style="width: 50%; height: auto;" class="text-center">
+                <p class="mb-0">Portfolio Allocation</p>
+                <h2 class="mt-0">Profit $</h2>
+                <div style="width: 70%; height: auto; position: relative;" class="mb-5 mx-auto">
+                  <!-- <div id="doughnutAmount" style="width: 100%; height: 40px; position: absolute; top: 60%; left: 0; margin-top: -20px; line-height:19px; text-align: center; z-index: 999999999999999">
+                    $99
+                  </div> -->
+                    <canvas id="doughNut2" style="width: 100%; height: 100%; "></canvas>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Table again -->
+            <table class="table-2 table table-borderless" style="border: 2px solid black; width: 90%; height: auto">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Opening Value</th>
+                        <th>Interest Amount</th>
+                        <th>Total Encashments</th>
+                        <th>Total Fees</th>
+                        <th>Gain/Loss</th>
+                        <th>Closing value</th>
+                        <th>Goal return</th>
+                    </tr>
+                    <tr style="background-color:#d9d9d9">
+                        <td>Total(US$)</td>
+                        <td class="totalInv"></td>
+                        <td class="totalInt"></td>
+                        <td class="totalEnc">$0</td>
+                        <td class="totalFee">$0</td>
+                        <td class="profit">$1000</td>  
+                        <td class="closingBalance"></td>
+                        <td class="roi">100%</td>  
+                    </tr>
+                </thead>
+            </table>
+
+
+        <!-- Bar chart container -->
+        <div class="container mb-5">
+            <h2 class="text-center head-text m-5">Goal Tracker Bar Chart (US$)</h2>
+            <div class="bar-container mx-auto" style="width: 100%; height: 300px">
+                <canvas id="barChart1" style="width: 100%; height: 100%; border: 2px solid #000; background-color: rgb(179, 179, 255);"></canvas>
+            </div>
+        </div>
+    </div>
+  </div>
+    
+    <div class="mx-auto mt-5 mb-5 text-center">
+        <button id="download" onclick="test()" class="btn btn-danger p-2 me-3">Download Statement</button>
+        <button id="deleteStorage" class="btn btn-danger p-2">Delete Statement</button>
+    </div>
+   
+   
+    <!-- Bootstrap script -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.js"></script>
+    <!-- Chartjs datalabels -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <!-- HTML 2 canvas library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Custom Js -->
+    <script src="statement.js"></script>
+    <script src="html2pdf.bundle.js"></script>
+
+    <script>
+        function test() {
+        // Get the element.
+        var element = document.getElementById('root');
+
+        // Choose pagebreak options based on mode.
+        var mode = 'statement';
+        var pagebreak = (mode === 'specify') ?
+            { mode: '', before: '.before', after: '.after', avoid: '.avoid' } :
+            { mode: mode };
+
+        // Generate the PDF.
+        html2pdf().from(element).set({
+          
+    html2canvas:  { scale: 1, scrollY: 1 },
+          filename: mode + '.pdf',
+          pagebreak: pagebreak,
+          margin:[0,0],
+          jsPDF: {orientation: 'portrait', unit: 'in', format: 'Tabloid', compressPDF: true}
+        }).save();
+      }
+    </script>
+</body>
+</html>

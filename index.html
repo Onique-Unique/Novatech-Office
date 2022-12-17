@@ -957,7 +957,8 @@
   <script>
     var domain = window.location.hostname;
     var links = document.querySelectorAll('a');
-    domainXML = `<url>
+    domainXML = `
+    <url>
     <loc>https://${domain}/</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <priority>1.0</priority>

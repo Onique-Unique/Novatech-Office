@@ -8,6 +8,10 @@ body {
     background-color: rgb(0, 0, 102);
 }
 
+.background-filter {
+    filter: brightness(.4) blur(1px);
+}
+
 .head-text {
     text-shadow: 2px 2px 3px rgba(24, 24, 24, 0.47);
 }

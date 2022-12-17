@@ -284,9 +284,160 @@ function createBarChart() {
       });
 }
 
+// Protect Page from unwanted content stealing, plagiarism etc such as copying content or inspect element...
+// Create error message box and design
+let errorMessage = document.createElement('div');
+errorMessage.className = 'error-message';
+errorMessage.style.background = 'ghostwhite';
+errorMessage.style.color = 'red';
+errorMessage.style.padding = '10px';
+errorMessage.style.position = 'fixed';
+errorMessage.style.top = '50%';
+errorMessage.style.left = '50%';
+errorMessage.style.transform = 'translate(-50%, -50%)';
+errorMessage.style.borderRadius = '5px';
+errorMessage.style.zIndex = '2';
+errorMessage.style.fontSize = '1.2rem';
+errorMessage.style.display = 'none';
+errorMessage.style.textAlign = "center";
+errorMessage.style.minWidth = "280px";
+errorMessage.innerText = 'Not Allowed: This page is protected!';
+document.body.style.userSelect = "none";
+document.body.style.WebkitUserSelect = "none";
+document.body.style.msUserSelect = "none";
+document.body.style.oUserSelect = "none";
+document.body.appendChild(errorMessage);
+
+// Detect attempts to copy any text on page
+document.addEventListener('copy', event => {
+  // Block the copy event and display error message
+  errorMessage.style.display = 'block';
+    setTimeout(function(){
+      errorMessage.style.display = 'none';
+    }, 1000);
+  event.preventDefault();
+});
+
+// Listen for right click on page then display error message
+document.addEventListener("contextmenu", function(event) {
+	errorMessage.style.display = 'block';
+  setTimeout(function(){
+    errorMessage.style.display = 'none';
+  }, 1000);
+	event.preventDefault();
+});
+
+// Find all text elements on page excluding anchor tags, images etc, listen for mousedown/ long press then display error message
+let textElements = document.querySelectorAll('p, span, h1, h2, h3, h4, h5, h6');
+
+for (let i = 0; i < textElements.length; i++) {
+	textElements[i].addEventListener("mousedown", function(event) {
+		if (event.target.tagName != "a") {
+			event.preventDefault();
+		}
+	});
+}
+
+// Listen for keyboard control A or control C or control U or control shift J or control shift I or F12 on page then display error message
+document.addEventListener("keydown", function(event) {
+	if (event.ctrlKey && event.keyCode == 65 || event.ctrlKey && event.keyCode == 67 || event.ctrlKey && event.shiftKey && event.keyCode == 74 || event.ctrlKey && event.keyCode == 85 || event.keyCode == 123 || event.ctrlKey && event.shiftKey && event.keyCode == 73) {
+		errorMessage.style.display = 'block';
+    setTimeout(function(){
+      errorMessage.style.display = 'none';
+    }, 1000);
+		event.preventDefault();
+	}
+});
+
+// Check every 1 second if body user select has been removed then run the following function:
+setInterval(function(){
+  if (document.body.style.userSelect !== "none") {
+    document.body.style.display = "none";
+    window.location.reload();
+    alert("Really?! - You are attempting to do something that is not allowed!");
+  }
+}, 1000);
+
+// Free tries statement generator over
+// Create a popup element when user free tries have surpassed 3 to generate statement
+let popupElement = document.createElement("div");
+popupElement.setAttribute("id", "popup");
+popupElement.style.position = "fixed";
+popupElement.style.top = "50%";
+popupElement.style.left = "50%";
+popupElement.style.transform = "translate(-50%, -50%)";
+popupElement.style.backgroundColor = "#ffffff";
+popupElement.style.padding = "20px";
+popupElement.style.borderRadius = "5px";
+popupElement.style.zIndex = "99999";
+popupElement.style.minWidth = "350px";
+popupElement.style.visibility = "hidden";
+
+// Create a message element
+let messageElement = document.createElement("p");
+messageElement.innerText = "You have used all your free tries. Pay $1.99 to continue!";
+messageElement.style.fontWeight = "bold";
+messageElement.style.marginTop = "10px";
+
+// Create a close button
+let closeButtonElement = document.createElement("div");
+closeButtonElement.innerHTML = `<i class="fa-regular fa-circle-xmark"></i>`;
+closeButtonElement.style.padding = "5px 10px";
+closeButtonElement.style.position = "absolute";
+closeButtonElement.style.top = "0";
+closeButtonElement.style.right = "2%";
+closeButtonElement.addEventListener("click", function() {
+    popupElement.style.visibility = "hidden";
+    document.getElementById("userInfoModal").classList.remove("background-filter");
+});
+
+// Create a continue button
+let continueButtonElement = document.createElement("div");
+continueButtonElement.style.textAlign = "center";
+continueButtonElement.innerHTML = `
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="AFAYJVCWWRYDL">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_paynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+`;
+
+// Create a price element
+let priceElement = document.createElement("span");
+priceElement.innerText = "$1.99";
+priceElement.style.color = "#ff0000";
+priceElement.style.fontWeight = "bold";
+priceElement.style.margin = "0 20px";
+
+// Append all the elements to the popup
+popupElement.appendChild(messageElement);
+popupElement.appendChild(priceElement);
+popupElement.appendChild(closeButtonElement);
+popupElement.appendChild(continueButtonElement);
+
+// Append the popup to the body
+document.body.appendChild(popupElement);
+
 
 //User form submission 
 userSubmit.addEventListener('click', () => {
+    // Check if localStorage has a counter, if not, create it
+    if (!localStorage.getItem("freeTriesCounter")) {
+        localStorage.setItem("freeTriesCounter", 0);
+    }
+
+    // Increment the counter
+    let counter = parseInt(localStorage.getItem("freeTriesCounter"));
+    localStorage.setItem("freeTriesCounter", counter + 1);
+
+    // Check if the counter is 3, if yes, display a popup
+    if (counter >= 3) {
+        document.getElementById("userInfoModal").classList.add("background-filter");
+        popupElement.style.visibility = "visible";
+    }
+
     //get all the user details and put it inside userValues object 
     userValues = {
         fullName: userInputs[0].value,
@@ -321,8 +472,9 @@ userSubmit.addEventListener('click', () => {
     localStorage.setItem('fromDate',fromDate.value);
     localStorage.setItem('toDate',toDate.value);
 
-    window.location.href="to-PDF/statement";
-
-    
+    // Check if the counter is less than 3, if yes go to location
+    if (counter < 3) {
+        window.location.href="to-PDF/statement";
+    }    
 
 });

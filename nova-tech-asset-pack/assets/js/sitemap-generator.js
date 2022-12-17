@@ -1,6 +1,6 @@
 var domain = window.location.hostname;
 var links = document.querySelectorAll('a');
-domainXML = `
+var domainXML = `
 <url>
 <loc>https://${domain}/</loc>
 <lastmod>${new Date().toISOString()}</lastmod>
